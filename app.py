@@ -5,3 +5,9 @@ To be more effective, this will have the ability to download either one video at
 When we will dowload the entire playlist, most likely I will implement some sort of multithreading to work faster
 """
 
+from video_downloader import VideoDownloader
+
+if __name__ == '__main__':
+    link = VideoDownloader('https://www.youtube.com/watch?v=h6m9medgP2A')
+    link.download_link()
+
