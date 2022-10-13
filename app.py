@@ -6,8 +6,9 @@ When we will dowload the entire playlist, most likely I will implement some sort
 """
 
 from video_downloader import VideoDownloader
+from sound_downloader import SoundDownloader
 
 if __name__ == '__main__':
-    link = VideoDownloader('https://www.youtube.com/watch?v=h6m9medgP2A')
-    link.download_link()
+    link = SoundDownloader('https://www.youtube.com/watch?v=aa4738xvHJ0')
+    link.download_link_sound()
 
