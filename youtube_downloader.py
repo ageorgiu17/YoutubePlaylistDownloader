@@ -3,6 +3,7 @@ This python file will be responsible for downloading the sound of one youtube vi
 """
 
 from pytube import Playlist, YouTube
+from concurrent.futures import ThreadPoolExecutor
 
 class YoutubeDownloader():
 
@@ -35,11 +36,11 @@ class YoutubeDownloader():
         self.link_type = self.check_link()
 
     def download_sound(self, link):
-        print(f'Downloading the sound (link method) {link.title}...')
+        print(f'Downloading audio for (link method) {link.title}...')
         link.streams.filter(only_audio=True).first().download(self.DOWNLOAD_DIR)
 
     def download_video(self, link):
-        print(f'Downloading the video (link method) {link.title}...')
+        print(f'Downloading video for (link method) {link.title}...')
         link.streams.get_highest_resolution().download(self.DOWNLOAD_DIR)
 
     def check_link(self):
@@ -76,12 +77,12 @@ class YoutubeDownloader():
 
         try:
             if self.type == "audio":
-                for link in playlist_link.videos:
-                    self.download_sound(link)
+                with ThreadPoolExecutor() as executor:
+                    executor.map(self.download_sound, playlist_link.videos)
 
-            else:
-                for link in playlist_link.videos:
-                    self.download_video(link)
+            elif self.type == "video":
+                with ThreadPoolExecutor() as executor:
+                    executor.map(self.download_video, playlist_link.video)
 
             print(f'Finished downloading. The files can be found in {self.DOWNLOAD_DIR.lstrip("./")} directory')
         except Exception as e:
