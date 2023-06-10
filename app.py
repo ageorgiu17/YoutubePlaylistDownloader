@@ -8,8 +8,6 @@ When we will dowload the entire playlist, most likely I will implement some sort
 from youtube_downloader import YoutubeDownloader
 
 if __name__ == "__main__":
-    link = YoutubeDownloader(
-        "https://www.youtube.com/watch?v=3RjQznt-8kE&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR"
-    )
+    link = YoutubeDownloader("https://www.youtube.com/watch?v=3RjQznt-8kE&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR")
     link.download()
 

@@ -60,7 +60,7 @@ class YoutubeDownloader:
         based on the link type
     """
 
-    DOWNLOAD_DIR = "./Sounds"
+    DOWNLOAD_DIR = "./YouTube_Downloads"
 
     def __init__(self, link, type="audio"):
         """
