@@ -1,6 +1,6 @@
 This is a simple Python projects that downloads videos (video or audio) from YouTube
 
-I decided to make this project because donwloading using free online tools 
+I decided to make this project because donwloading using free online tools
 became more and more unpleaseand. For this to work you will need to have
 installed the pytube library
 
@@ -28,7 +28,7 @@ link = YoutubeDownloader(youtube_link)
 By using the above instructions, the script will download the video as an audio
 file (this is made by default). If you want to change and save the video as
 a video file (mp4) then after the link provided you will have to specify the
-parameter "type" with the value "video" 
+parameter "type" with the value "video"
 
 ```python
 link = YoutubeDownloader(youtube_link, type="video")
@@ -40,5 +40,5 @@ the project and run the following:
 
 `python3 app.py`
 
-This will create a new directory in the current location with the name 
+This will create a new directory in the current location with the name
 'YouTube_Downloads' where you will have all the downloaded files.
